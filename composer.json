@@ -1,0 +1,5 @@
+{
+    "require": {
+        "fgrosse/phpasn1": "^1.5"
+    }
+}
