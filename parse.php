@@ -20,10 +20,11 @@ $object = $parser->parseBinary(file_get_contents(__DIR__."/d_rsa.crl"), $templat
 echo "Список отозванных сертификатов с Delta на ";
 foreach($object->getChildren() as $child) {
     foreach ($child as $key=>$obj) {
-        if ($key==3) {
+        //$key==4 действителен до
+        if ($key==3) { // действителен с
             echo $obj->getContent()->format('Y-m-d\TH:i:s.u'); 
             echo '<hr>';
-        } elseif ($key==5) {
+        } elseif ($key==5) { // список отозванных сертификатов
             foreach($obj->getChildren() as $cert) {
                 
                echo bcdechex($cert[0]->getContent())."<br>";
